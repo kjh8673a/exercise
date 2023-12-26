@@ -1,9 +1,10 @@
 package com.example.firstservice.feign;
 
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@org.springframework.cloud.openfeign.FeignClient(name = "API-GATEWAY-SERVICE")
-public interface FeignClient {
+@FeignClient(name = "API-GATEWAY-SERVICE")
+public interface FeignDemoClient {
 
 	@GetMapping("/second-service/welcome")
 	String secondServiceWelcome();
